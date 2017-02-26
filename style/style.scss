@@ -1,0 +1,58 @@
+$green: #267c28;
+$red: #ed0000;
+$black: #000000;
+$white: #ffffff;
+
+$card-height: 80px;
+$card-width: 50px;
+$card-padding: 10px;
+$card-margin: 5px;
+
+body {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 18px;
+	background: $green;
+}
+
+.deck {
+	width: ($card-width + $card-padding * 2 + $card-margin * 2) * 13;
+	max-width: 100%;
+}
+.card {
+	height: $card-height;
+	width: $card-width;
+	padding: $card-padding;
+	margin: $card-margin;
+
+	display: inline-block;
+	background: $white;
+	border-radius: 3px;
+
+	&.diamonds, &.hearts {
+		color: $red;
+	}
+	&.clubs, &.spades {
+		color: $black;
+	}
+
+	&.diamonds { .suit:after { content: '\2666'; } }
+	&.hearts { .suit:after { content: '\2665'; } }
+	&.clubs { .suit:after { content: '\2663'; } }
+	&.spades { .suit:after { content: '\2660'; } }
+}
+
+.rank {
+	&.ace:after { content: 'A'; }
+	&.two:after { content: '2'; }
+	&.three:after { content: '3'; }
+	&.four:after { content: '4'; }
+	&.five:after { content: '5'; }
+	&.six:after { content: '6'; }
+	&.seven:after { content: '7'; }
+	&.eight:after { content: '8'; }
+	&.nine:after { content: '9'; }
+	&.ten:after { content: '10'; }
+	&.jack:after { content: 'J'; }
+	&.queen:after { content: 'Q'; }
+	&.king:after { content: 'K'; }
+}

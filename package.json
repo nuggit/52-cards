@@ -1,0 +1,14 @@
+{
+	"name": "52-cards",
+	"version": "0.0.0",
+	"description": "Display, shuffle, and sort cards",
+	"author": "Nagisa Day",
+	"scripts": {
+		"test": "mocha"
+	},
+	"devDependencies": {
+		"mocha": "^3.2.0",
+		"gulp": "~3.9.1",
+		"gulp-sass": "~3.1.0"
+	}
+}
