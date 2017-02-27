@@ -1,6 +1,6 @@
 var Deck = (function () {
-	var RANKS = ['ace', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'jack', 'queen', 'king'];
-	var SUITS = ['diamonds', 'clubs', 'hearts', 'spades'];
+	var RANKS = ["ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king"];
+	var SUITS = ["diamonds", "clubs", "hearts", "spades"];
 	var DECK_SIZE = RANKS.length * SUITS.length;
 
 	function createDeck() {
