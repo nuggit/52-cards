@@ -15,7 +15,7 @@ npm install && gulp
 ```
 Then open public/cards.html in your browser.
 
-To test, open testrunner.html in your browser.
+To run tests, open testrunner.html in your browser.
 
 ## Notes:
-* "Sorted" means Diamonds, Clubs, Hearts, then Spades, Ace to King
+* "Sorted" means Ace to King in Diamonds, Clubs, Hearts, then Spades
