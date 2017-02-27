@@ -14,9 +14,16 @@ body {
 	background: $green;
 }
 
+button {
+	width: 80px;
+	height: 30px;
+}
+
 .cards {
 	width: ($card-width + $card-padding * 2 + $card-margin * 2) * 13;
 	max-width: 100%;
+	padding: 0;
+	margin: 10px auto;
 }
 .card {
 	height: $card-height;

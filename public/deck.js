@@ -1,3 +1,5 @@
+"use strict";
+
 var Deck = (function () {
 	var RANKS = ["ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king"];
 	var SUITS = ["diamonds", "clubs", "hearts", "spades"];
