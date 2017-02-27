@@ -3,15 +3,15 @@ var assert = chai.assert;
 describe("Deck", function () {
 	describe("Creating the deck", function () {
 		it("should contain 52 cards", function () {
-			var deck = Deck();
+			var deck = new Deck();
 			assert.equal(deck.cards.length, 52);
 		});
 		it("should contain no duplicates", function () {
-			var deck = Deck();
+			var deck = new Deck();
 			assert.deepEqual(getDuplicates(deck), []);
 		});
 		it("should have 13 cards in each suit", function () {
-			var deck = Deck();
+			var deck = new Deck();
 			var table = deck.cards.reduce(function(table, card) {
 				table[card.suit] = (table[card.suit] || 0) + 1;
 				return table;
@@ -22,7 +22,7 @@ describe("Deck", function () {
 			});
 		});
 		it("should have 4 cards for each rank", function () {
-			var deck = Deck();
+			var deck = new Deck();
 			var table = deck.cards.reduce(function(table, card) {
 				table[card.rank] = (table[card.rank] || 0) + 1;
 				return table;
@@ -34,9 +34,9 @@ describe("Deck", function () {
 			});
 		});
 		it("should already be sorted", function () {
-			var deck = Deck();
+			var deck = new Deck();
 
-			var sortedDeck = Deck();
+			var sortedDeck = new Deck();
 			sortedDeck.sort();
 
 			assert.deepEqual(sortedDeck.cards, deck.cards);
@@ -45,20 +45,20 @@ describe("Deck", function () {
 
 	describe("Shuffling the deck", function () {
 		it("should contain 52 cards", function () {
-			var deck = Deck();
+			var deck = new Deck();
 			deck.shuffle();
 			assert.equal(deck.cards.length, 52);
 		});
 		it("should contain no duplicates", function () {
-			var deck = Deck();
+			var deck = new Deck();
 			deck.shuffle();
 			assert.deepEqual(getDuplicates(deck), []);
 		});
 		it("should be in different order from a sorted deck", function () {
-			var deck = Deck();
+			var deck = new Deck();
 			deck.shuffle();
 
-			var sortedDeck = Deck();
+			var sortedDeck = new Deck();
 
 			assert.notDeepEqual(sortedDeck.cards, deck.cards);
 		});
@@ -66,28 +66,28 @@ describe("Deck", function () {
 
 	describe("Sorting the deck", function () {
 		it("should contain 52 cards after shuffling and sorting", function () {
-			var deck = Deck();
+			var deck = new Deck();
 			deck.shuffle();
 			deck.sort();
 			assert.equal(deck.cards.length, 52);
 		});
 		it("should contain no duplicates after shuffling and sorting", function () {
-			var deck = Deck();
+			var deck = new Deck();
 			deck.shuffle();
 			deck.sort();
 			assert.deepEqual(getDuplicates(deck), []);
 		});
 		it("should be in the same order as a sorted deck after shuffling and sorting", function () {
-			var deck = Deck();
+			var deck = new Deck();
 			deck.shuffle();
 			deck.sort();
 
-			var sortedDeck = Deck();
+			var sortedDeck = new Deck();
 
 			assert.deepEqual(sortedDeck.cards, deck.cards);
 		});
 		it("should ascend from ace of diamonds to king of spades", function () {
-			var deck = Deck();
+			var deck = new Deck();
 			deck.shuffle();
 			deck.sort();
 

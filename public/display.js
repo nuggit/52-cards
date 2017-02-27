@@ -5,4 +5,4 @@ var display = new Vue({
 	data: {
 		cards: myDeck.cards
 	}
-})
+});
