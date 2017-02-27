@@ -1,6 +1,8 @@
+var myDeck = new Deck();
+
 var display = new Vue({
-	el: '#cards',
+	el: '#cardsDisplay',
 	data: {
-		deck: Deck.get()
+		cards: myDeck.cards
 	}
 })

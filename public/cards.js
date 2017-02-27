@@ -3,13 +3,11 @@ var Deck = (function () {
 	var SUITS = ['diamonds', 'clubs', 'hearts', 'spades'];
 	var DECK_SIZE = RANKS.length * SUITS.length;
 
-	var deck = createDeck();
-
 	function createDeck() {
-		var newDeck = [];
+		var cards = [];
 
 		for (var i = 0; i < DECK_SIZE; i++) {
-			newDeck.push({
+			cards.push({
 				suitIndex: Math.floor(i / RANKS.length),
 				suit: SUITS[Math.floor(i / RANKS.length)],
 
@@ -17,21 +15,29 @@ var Deck = (function () {
 				rank: RANKS[i % RANKS.length]
 			});
 		}
-		return newDeck;
+		return {
+			cards: cards,
+			shuffle: function () {
+				shuffleDeck(cards);
+			},
+			sort: function () {
+				sortDeck(cards);
+			}
+		};
 	}
 
-	function sortDeck() {
-		deck.sort(function (a, b) {
+	function sortDeck(cards) {
+		cards.sort(function (a, b) {
 			if (a.suitIndex < b.suitIndex ||
 				(a.suitIndex == b.suitIndex && a.rankIndex < b.rankIndex)) {
 				return -1;
 			}
-			return 1; // TODO: test that all cards in deck are unique
+			return 1;
 		});
 	}
 
-	function shuffleDeck() {
-		shuffle(deck);
+	function shuffleDeck(cards) {
+		shuffle(cards);
 	}
 
 	// Fisher–Yates shuffle
@@ -51,11 +57,5 @@ var Deck = (function () {
 		}
 	}
 
-	return {
-		get: function() {
-			return deck;
-		},
-		shuffle: shuffleDeck,
-		sort: sortDeck
-	};
+	return createDeck;
 })();

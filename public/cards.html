@@ -4,15 +4,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
 	<title>52 Cards</title>
-	<link rel="stylesheet" href="public/style.css">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<button onclick="Deck.shuffle()">Shuffle</button>
-<button onclick="Deck.sort()">Sort</button>
+<button onclick="myDeck.shuffle()">Shuffle</button>
+<button onclick="myDeck.sort()">Sort</button>
 
-	<div id="cards">
-		<ul class="deck">
-			<li class="card" v-for="card in deck" v-bind:class="card.suit">
+	<div id="cardsDisplay">
+		<ul class="cards">
+			<li class="card" v-for="card in cards" v-bind:class="card.suit">
 				<span class="rank" v-bind:class="card.rank"></span>
 				<span class="suit"></span>
 			</li>
@@ -20,7 +20,7 @@
 	</div>
 	
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
 	<script src="cards.js"></script>
 	<script src="display.js"></script>
 </body>
